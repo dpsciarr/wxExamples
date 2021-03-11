@@ -4,8 +4,8 @@
 #include <wx/wx.h>
 #endif
 
-App::App() : wxFrame((wxWindow*)NULL, wxID_ANY, "Example 1", wxPoint(30, 30), wxSize(800, 600)) {
-    
+App::App() : wxFrame((wxWindow*)NULL, wxID_ANY, "Example 2", wxPoint(30, 30), wxSize(800, 600)) {
+
     // Main Parent Panel
     wxPanel* mainPanel = new wxPanel(this, wxID_ANY);
     mainPanel->SetBackgroundColour(wxColor("blue"));
