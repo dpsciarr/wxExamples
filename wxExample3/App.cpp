@@ -62,9 +62,9 @@ App::App(const wxString& title) : wxFrame((wxWindow*)NULL, wxID_ANY, title, wxPo
     hSizer5->Add(btn1, 0);
     hSizer5->Add(btn2, 0, wxLEFT | wxBOTTOM, 5);
     vSizer->Add(hSizer5, 0, wxALIGN_RIGHT | wxRIGHT, 10);
-    
-
     mainPanel->SetSizer(vSizer);
+
+
 
 }
 
