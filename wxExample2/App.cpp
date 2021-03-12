@@ -6,22 +6,27 @@
 
 App::App() : wxFrame((wxWindow*)NULL, wxID_ANY, "Example 2", wxPoint(30, 30), wxSize(800, 600)) {
 
-    // Main Parent Panel
-    wxPanel* mainPanel = new wxPanel(this, wxID_ANY);
-    mainPanel->SetBackgroundColour(wxColor("blue"));
+    wxPanel *mainPanel = new wxPanel(this, wxID_ANY);
 
-    // Create a Secondary Panel
-    wxPanel* secPanel = new wxPanel(mainPanel, wxID_ANY);
-    secPanel->SetBackgroundColour(wxColor("orange"));
+    wxBoxSizer *vSizer = new wxBoxSizer(wxVERTICAL);
+    wxBoxSizer* hSizer1 = new wxBoxSizer(wxHORIZONTAL);
+    wxBoxSizer* hSizer2 = new wxBoxSizer(wxHORIZONTAL);
 
-    // Create the main panel sizer and add the secondary panel to it
-    wxBoxSizer* mainPanelSizer = new wxBoxSizer(wxVERTICAL);
-    mainPanelSizer->Add(secPanel, 1, wxEXPAND | wxALL, 20);
+    wxButton* okBtn = new wxButton(mainPanel, -1, "OK");
+    wxButton* cancelBtn = new wxButton(mainPanel, -1, "Cancel");
 
-    // Set up the main panel sizer for the main panel
-    mainPanel->SetSizer(mainPanelSizer);
+    hSizer1->Add(new wxPanel(mainPanel, -1));
+    vSizer->Add(hSizer1, 1, wxEXPAND);
 
+    hSizer2->Add(okBtn);
+    hSizer2->Add(cancelBtn);
 
+    vSizer->Add(hSizer2, 0, wxALIGN_RIGHT | wxBOTTOM | wxRIGHT, 10);
+
+    mainPanel->SetSizer(vSizer);
+    
+    Centre();
+    
 }
 
 App::~App() {
